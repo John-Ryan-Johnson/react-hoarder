@@ -1,4 +1,5 @@
 import React from 'react';
+import './NewStuff.scss';
 
 class NewStuff extends React.Component {
   render() {
