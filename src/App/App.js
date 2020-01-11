@@ -17,6 +17,7 @@ import Home from '../components/pages/Home/Home';
 import MyStuff from '../components/pages/MyStuff/MyStuff';
 import SingleStuff from '../components/pages/SingleStuff/SingleStuff';
 import EditStuff from '../components/pages/EditStuff/EditStuff';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   const routeChecker = (props) => (authed === false ? <Component {...props} {...rest}/> : <Redirect to={{ pathname: '/', state: { from: props.location } }} />);
@@ -36,7 +37,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log('appjs');
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({ authed: true });
