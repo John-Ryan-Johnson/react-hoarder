@@ -21,10 +21,13 @@ class MyNavbar extends React.Component {
         return (
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link className="nav-link" to ="/">Boards</Link>
+              <Link className="nav-link" to="/home">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/board/new">New Board</Link>
+              <Link className="nav-link" to="/stuff">My Stuff</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/stuff/new">New</Link>
             </li>
             <li className="nav-item">
               <button className="nav-link btn btn-danger" onClick={this.logMeOut}>Logout</button>
@@ -34,21 +37,20 @@ class MyNavbar extends React.Component {
       }
       return (<ul className="navbar-nav ml-auto"></ul>);
     };
-
     return (
-
       <div className="MyNavbar">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <Link className="nav-brand" to ="/">Pinterest</Link>
+          <div className="nav-brand">React Hoarder</div>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            { buildNavbar() }
+           { buildNavbar() }
           </div>
         </nav>
       </div>
     );
   }
 }
+
 export default MyNavbar;
