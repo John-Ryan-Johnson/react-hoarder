@@ -22,10 +22,13 @@ class MyNavbar extends React.Component {
         return (
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
+              <Link className="nav-link text-white" to="/">Home</Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link text-white" to="/stuff">My Stuff</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-white" to="/stuff/new">New Stuff</Link>
+              <Link className="nav-link text-white" to="/stuff/new">New</Link>
             </li>
             <li className="nav-item">
               <button className="nav-link btn btn-danger text-white" onClick={this.logMeOut}>Log Out</button>
@@ -40,7 +43,7 @@ class MyNavbar extends React.Component {
     return (
       <div className="MyNavbar">
         <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-          <Link className="navbar-brand text-white" to="/">React Hoarder</Link>
+          <nav className="navbar-brand text-white">React Hoarder</nav>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
