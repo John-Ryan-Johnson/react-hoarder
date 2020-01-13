@@ -14,7 +14,7 @@ import MyNavbar from '../components/shared/MyNavbar/MyNavbar';
 import NewStuff from '../components/pages/New/New';
 import Auth from '../components/pages/Auth/Auth';
 import Home from '../components/pages/Home/Home';
-import MyStuff from '../components/pages/MyStuff/MyStuff';
+import MyStuff from '../components/shared/MyStuff/MyStuff';
 import SingleStuff from '../components/pages/SingleStuff/SingleStuff';
 import Edit from '../components/pages/Edit/Edit';
 import 'bootstrap/dist/css/bootstrap.min.css';
