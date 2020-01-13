@@ -11,12 +11,12 @@ import firebaseConnection from '../helpers/data/connection';
 import './App.scss';
 
 import MyNavbar from '../components/shared/MyNavbar/MyNavbar';
-import NewStuff from '../components/pages/New/New';
+import NewStuff from '../components/pages/NewStuff/NewStuff';
 import Auth from '../components/pages/Auth/Auth';
 import Home from '../components/pages/Home/Home';
 import MyStuff from '../components/shared/MyStuff/MyStuff';
 import SingleStuff from '../components/pages/SingleStuff/SingleStuff';
-import Edit from '../components/pages/Edit/Edit';
+import EditStuff from '../components/pages/EditStuff/EditStuff';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
@@ -57,12 +57,12 @@ class App extends React.Component {
         <Router>
           <MyNavbar authed={authed} />
           <Switch>
-            <PrivateRoute path="/home" exact component={Home} authed={authed} />
+            <PrivateRoute path="/" exact component={Home} authed={authed} />
             <PrivateRoute path="/stuff/new" exact component={NewStuff} authed={authed} />
             <PublicRoute path="/auth" exact component={Auth} authed={authed} />
             <PrivateRoute path="/stuff" exact component={MyStuff} authed={authed} />
-            <PrivateRoute path="/stuff/12345" exact component={SingleStuff} authed={authed} />
-            <PrivateRoute path="/stuff/12345/edit" exact component={Edit} authed={authed} />
+            <PrivateRoute path="/stuff/:stuffId" exact component={SingleStuff} authed={authed} />
+            <PrivateRoute path="/stuff/:stuffId/edit" exact component={EditStuff} authed={authed} />
           </Switch>
         </Router>
       </div>
