@@ -1,7 +1,7 @@
 import React from 'react';
-import './NewStuff.scss';
+import './New.scss';
 
-class NewStuff extends React.Component {
+class New extends React.Component {
   render() {
     return (
       <div className="NewStuff">
@@ -11,4 +11,4 @@ class NewStuff extends React.Component {
   }
 }
 
-export default NewStuff;
+export default New;
