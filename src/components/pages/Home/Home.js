@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.scss';
 
 class Home extends React.Component {
@@ -6,6 +7,8 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <h1>Home</h1>
+        <Link className="btn btn-primary text-center text-white mt-4" to="/stuff/new">New Stuff</Link>
+        <Link className="btn btn-secondary text-center text-white ml-3 mt-4" to="/stuff">My Stuff</Link>
       </div>
     );
   }
