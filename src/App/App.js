@@ -11,13 +11,12 @@ import firebaseConnection from '../helpers/data/connection';
 import './App.scss';
 
 import MyNavbar from '../components/shared/MyNavbar/MyNavbar';
-import New from '../components/pages/New/New';
+import StuffForm from '../components/pages/New/New';
 import Auth from '../components/pages/Auth/Auth';
 import Home from '../components/pages/Home/Home';
-import MyStuff from '../components/shared/MyStuff/MyStuff';
+import MyStuff from '../components/pages/MyStuff/MyStuff';
 import SingleStuff from '../components/pages/SingleStuff/SingleStuff';
-import Edit from '../components/pages/Edit/Edit';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import EditStuff from '../components/pages/Edit/Edit';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   const routeChecker = (props) => (authed === false ? <Component {...props} {...rest}/> : <Redirect to={{ pathname: '/', state: { from: props.location } }} />);
@@ -58,11 +57,11 @@ class App extends React.Component {
           <MyNavbar authed={authed} />
           <Switch>
             <PrivateRoute path="/" exact component={Home} authed={authed} />
-            <PrivateRoute path="/stuff/new" exact component={New} authed={authed} />
+            <PrivateRoute path="/stuff/new" exact component={StuffForm} authed={authed} />
             <PublicRoute path="/auth" exact component={Auth} authed={authed} />
             <PrivateRoute path="/stuff" exact component={MyStuff} authed={authed} />
-            <PrivateRoute path="/stuff/:stuffId" exact component={SingleStuff} authed={authed} />
-            <PrivateRoute path="/stuff/:stuffId/edit" exact component={Edit} authed={authed} />
+            <PrivateRoute path="/stuff/:itemId" exact component={SingleStuff} authed={authed} />
+            <PrivateRoute path="/stuff/:itemId/edit" exact component={EditStuff} authed={authed} />
           </Switch>
         </Router>
       </div>
