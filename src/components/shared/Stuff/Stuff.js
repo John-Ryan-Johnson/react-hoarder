@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './Stuff.scss';
 
 import itemShape from '../../../helpers/propz/itemShape';
 
@@ -20,16 +21,19 @@ class Stuff extends React.Component {
     const { item } = this.props;
 
     return (
-      <div className="Stuff col-md-4">
-        <div className="card">
-          <div className="card-body">
-            <h4 className="card-title">{item.itemName}</h4>
-            <Link className="btn btn-secondary" to={`/stuff/${item.id}`}>View Single Item</Link>
-            <Link className="btn btn-warning" to={`/stuff/${item.id}/edit`}>Edit</Link>
-            <button className="btn btn-danger" onClick={this.deleteItemEvent}>Delete Item</button>
-          </div>
+
+        <div className="Stuff col-md-3">
+          <Link className="card mb-3" style={{ textDecoration: 'none' }} to={`/stuff/${item.id}`}>
+            <img src={item.itemImage} className="card-img-top" alt=""/>
+              <div className="card-body text-dark">
+               <h5 className="card-title">{item.itemName}</h5>
+               <p className="card-title">{item.itemDescription}</p>
+               <Link className="btn btn-outline-success mr-3" to={`/stuff/${item.id}/edit`}>Update</Link>
+               <button className="btn btn-outline-danger ml-3" onClick={this.deleteItemEvent}>Delete</button>
+              </div>
+          </Link>
         </div>
-      </div>
+
     );
   }
 }

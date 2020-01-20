@@ -16,7 +16,7 @@ import Auth from '../components/pages/Auth/Auth';
 import Home from '../components/pages/Home/Home';
 import MyStuff from '../components/pages/MyStuff/MyStuff';
 import SingleStuff from '../components/pages/SingleStuff/SingleStuff';
-import EditStuff from '../components/pages/Edit/Edit';
+import Edit from '../components/pages/Edit/Edit';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   const routeChecker = (props) => (authed === false ? <Component {...props} {...rest}/> : <Redirect to={{ pathname: '/', state: { from: props.location } }} />);
@@ -61,7 +61,7 @@ class App extends React.Component {
             <PublicRoute path="/auth" exact component={Auth} authed={authed} />
             <PrivateRoute path="/stuff" exact component={MyStuff} authed={authed} />
             <PrivateRoute path="/stuff/:itemId" exact component={SingleStuff} authed={authed} />
-            <PrivateRoute path="/stuff/:itemId/edit" exact component={EditStuff} authed={authed} />
+            <PrivateRoute path="/stuff/:itemId/edit" exact component={Edit} authed={authed} />
           </Switch>
         </Router>
       </div>
