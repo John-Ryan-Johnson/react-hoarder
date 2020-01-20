@@ -1,4 +1,5 @@
 import React from 'react';
+import './SingleStuff.scss';
 import itemsData from '../../../helpers/data/itemsData';
 import authData from '../../../helpers/data/authData';
 
@@ -14,7 +15,6 @@ class SingleStuff extends React.Component {
         this.setState({ item: response.data });
       })
       .catch((errFromSingleStuff) => console.error(errFromSingleStuff));
-    this.getItemsData();
   }
 
   getItemsData = () => {
